@@ -14,6 +14,9 @@ class HelloWorld(unittest.TestCase):
         driver = self.driver
         driver.get('https://www.platzi.com')
 
+    def test_edundipia(self):
+        driver = self.driver.get('https://www.edundipia.com')
+
     def tearDown(self):
         self.driver.quit()
 
