@@ -3,10 +3,12 @@ from pyunitreport import HTMLTestRunner
 from selenium import webdriver
 
 class HelloWorld(unittest.TestCase):
-    def setUp(self):
+
+    @classmethod
+    def setUpClass(cls):
         #hay que modificar la ruta rependiendo del sistema operativo y donde esté instalado en chromedriver
-        self.driver = webdriver.Chrome(executable_path= r'C:\Users\jm_yg\Dropbox\Educación\MOOCS\selenium\chromedriver.exe')
-        driver = self.driver
+        cls.driver = webdriver.Chrome(executable_path= r'C:\Users\jm_yg\Dropbox\Educación\MOOCS\selenium\chromedriver.exe')
+        driver = cls.driver
         driver.implicitly_wait(10)
 
 
@@ -17,8 +19,9 @@ class HelloWorld(unittest.TestCase):
     def test_edundipia(self):
         driver = self.driver.get('https://www.edundipia.com')
 
-    def tearDown(self):
-        self.driver.quit()
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.quit()
 
 if __name__ == '__main__':
     unittest.main(verbosity= 2, testRunner= HTMLTestRunner(output= 'reports', report_name= 'Hello World report', ))
