@@ -25,9 +25,11 @@ class HomePagetest(unittest.TestCase):
         search_field = self.driver.find_element_by_class_name("input-text")
 
     def test_search_button_enabled(self):
-        button = self.driver.find_element_by_class_name
-        
+        button = self.driver.find_element_by_class_name("button")
 
+    def test_count_of_promo_banner_images(self):
+        
+        
     def tearDown(self):
         self.driver.quit()
 
