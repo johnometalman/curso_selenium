@@ -13,7 +13,7 @@ class HomePagetest(unittest.TestCase):
         driver = self.driver
         driver.get("http://demo.onestepcheckout.com/")
         driver.maximize_window()
-        driver.implicitly_wait(15)
+        driver.implicitly_wait(10)
 
     def test_search_text_field(self):
         search_field = self.driver.find_element_by_id("search")
@@ -28,6 +28,9 @@ class HomePagetest(unittest.TestCase):
         button = self.driver.find_element_by_class_name("button")
 
     def test_count_of_promo_banner_images(self):
+        banner_list = self.driver.find_element_by_class_name("promos")
+        banners = banner_list.find_element_by_tag_name('img')
+        self.assertEqual(3, len(banners))
         
         
     def tearDown(self):
