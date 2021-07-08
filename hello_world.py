@@ -24,4 +24,4 @@ class HelloWorld(unittest.TestCase):
         cls.driver.quit()
 
 if __name__ == '__main__':
-    unittest.main(verbosity= 2, testRunner= HTMLTestRunner(output= 'reports', report_name= 'Hello World report', ))
+    unittest.main(verbosity= 2, testRunner= HTMLTestRunner(output= 'reports', report_name= 'Hello World report'))
